@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Autoplay Killer",
+  "version": "1.1.0",
+  "description": "Stops autoplay videos everywhere. One-click global toggle that pauses videos/audio and prevents sites from re-enabling autoplay.",
+  "permissions": ["storage", "scripting", "tabs"],
+  "background": { "service_worker": "service_worker.js" },
+  "action": { "default_title": "Autoplay Killer" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
